@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Money Well Spent</string>
+    <string name="expenses">Expenses</string>
 </resources>
