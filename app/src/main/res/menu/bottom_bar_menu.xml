@@ -5,6 +5,21 @@
         android:id="@+id/expensesFragment"
         android:icon="@drawable/ic_home_light"
         android:title="@string/expenses"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        android:enabled="true"/>
 
+    <item
+        android:enabled="false"
+        android:title=""
+        app:showAsAction="always"
+        android:checkable="false"
+        android:checked="false"
+        />
+
+    <item
+        android:id="@+id/walletsFragment"
+        android:icon="@drawable/ic_home_light"
+        android:title="@string/wallets"
+        app:showAsAction="ifRoom"
+        android:enabled="true"/>
 </menu>

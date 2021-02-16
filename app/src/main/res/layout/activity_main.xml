@@ -14,52 +14,68 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
 
+    <!--    <FrameLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent">-->
+    <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:src="@drawable/ic_add_light"-->
+    <!--            android:layout_gravity="center" />-->
+    <!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:menu="@menu/bottom_bar_menu"/>-->
+
+
+    <!--    </FrameLayout>-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/container_layout"
+        android:id="@+id/coordinator_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="false"
+        android:fitsSystemWindows="false"
+        android:focusable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
+
 
         <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottom_app_bar"
+            android:id="@+id/bottom_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="@color/purple_500"
-            app:fabAlignmentMode="center"
-            app:fabAnimationMode="slide"
-            app:fabCradleMargin="8dp"
-            app:fabCradleRoundedCornerRadius="24dp">
+            android:background="@android:color/transparent"
+            android:clickable="false"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:fabAlignmentMode="center">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <ImageButton
-                    android:id="@+id/expensesFragment"
-                    android:padding="0dp"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_home_light"
-                    android:backgroundTint="@color/purple_500"
-                    android:scaleType="fitCenter"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:menu="@menu/bottom_bar_menu"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineSpotShadowColor="@android:color/transparent"/>
 
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
+            style="@style/Widget.Design.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/teal_700"
             android:src="@drawable/ic_add_light"
-            app:layout_anchor="@id/bottom_app_bar" />
+            android:tint="@color/white"
+            app:layout_anchor="@id/bottom_bar"
+            />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

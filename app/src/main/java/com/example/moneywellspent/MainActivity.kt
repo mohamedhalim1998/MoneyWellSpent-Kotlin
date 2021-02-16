@@ -10,6 +10,7 @@ import com.example.moneywellspent.data.model.Expense
 import com.example.moneywellspent.data.model.ExpenseCategory
 import com.example.moneywellspent.data.model.Wallet
 import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        val bottomBar = findViewById<BottomAppBar>(R.id.bottom_app_bar)
+        val bottomBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val scope = CoroutineScope(Dispatchers.IO);
         NavigationUI.setupWithNavController(bottomBar, navController)
         val fab = findViewById<FloatingActionButton>(R.id.fab)
