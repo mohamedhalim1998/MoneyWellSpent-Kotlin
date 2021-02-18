@@ -49,6 +49,15 @@ class ExpensesFragment : Fragment() {
         viewModel.expenses.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+        viewModel.expensesToday.observe(viewLifecycleOwner, Observer {
+            binding.expensesSummary.todayExpense.text = it?.toString() ?: "0.0"
+        })
+        viewModel.expensesWeek.observe(viewLifecycleOwner, Observer {
+            binding.expensesSummary.weekExpense.text = it?.toString() ?: "0.0"
+        })
+        viewModel.expensesMonth.observe(viewLifecycleOwner, Observer {
+            binding.expensesSummary.monthExpense.text = it?.toString() ?: "0.0"
+        })
     }
 
 

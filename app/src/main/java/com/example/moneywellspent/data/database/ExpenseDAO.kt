@@ -6,6 +6,7 @@ import androidx.room.Query
 import com.example.moneywellspent.data.model.Expense
 import com.example.moneywellspent.data.model.Wallet
 import kotlinx.coroutines.flow.Flow
+import java.util.*
 
 @Dao
 interface ExpenseDAO {
@@ -17,4 +18,7 @@ interface ExpenseDAO {
 
     @Query("SELECT * FROM expenses")
     fun getAllExpense(): Flow<List<Expense>>
+
+    @Query("SELECT SUM(amount) as total FROM expenses WHERE date BETWEEN :from AND :to")
+    fun getPaymentBetween(from: Date, to: Date): Flow<Double>
 }
