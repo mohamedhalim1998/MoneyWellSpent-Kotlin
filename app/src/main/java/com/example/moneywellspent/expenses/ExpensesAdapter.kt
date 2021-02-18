@@ -5,7 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moneywellspent.R
 import com.example.moneywellspent.data.model.Expense
+import com.example.moneywellspent.data.model.ExpenseCategory
 import com.example.moneywellspent.databinding.ExpenseListItemBinding
 
 class ExpensesAdapter : ListAdapter<Expense, ExpenseViewHolder>(ExpenseDiffUtils()) {
@@ -31,7 +33,19 @@ class ExpenseViewHolder(private val binding: ExpenseListItemBinding) :
 
     fun bind(expense: Expense) {
         binding.expenseAmount.text = expense.amount.toString()
-        binding.expenseCategory.text = expense.category.toString()
+        binding.expenseCategory.text = expense.category.toString().capitalize()
+        binding.expenseIcon.apply {
+            when (expense.category) {
+                ExpenseCategory.TRANSFER -> setImageResource(R.drawable.ic_transfer)
+                ExpenseCategory.TRANSPORTATION -> setImageResource(R.drawable.ic_transportation)
+                ExpenseCategory.FOOD -> setImageResource(R.drawable.ic_food)
+                ExpenseCategory.ENTERTAINMENT -> setImageResource(R.drawable.ic_entertainment)
+                ExpenseCategory.BILLS -> setImageResource(R.drawable.ic_fees)
+                ExpenseCategory.EDUCATION -> setImageResource(R.drawable.ic_education)
+                ExpenseCategory.HEALTH -> setImageResource(R.drawable.ic_health)
+                else -> setImageResource(R.drawable.ic_other)
+            }
+        }
     }
 }
 

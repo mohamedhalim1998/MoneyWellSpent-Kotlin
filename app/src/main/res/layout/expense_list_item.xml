@@ -9,13 +9,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <ImageView
-            android:padding="4dp"
+            android:id="@+id/expense_icon"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:padding="4dp"
             android:scaleType="fitCenter"
             tools:src="@drawable/ic_home_dark" />
 
@@ -23,19 +24,21 @@
             android:id="@+id/expense_category"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
             android:padding="4dp"
             android:textColor="@color/black"
-            android:layout_weight="1"
-            android:textSize="32sp"
+            android:textSize="26sp"
             tools:text="Health" />
 
         <TextView
             android:id="@+id/expense_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:padding="4dp"
-            android:textColor="@color/black"
-            android:textSize="32sp"
+            android:textColor="#D32F2F"
+            android:textSize="24sp"
             tools:text="31" />
 
 
