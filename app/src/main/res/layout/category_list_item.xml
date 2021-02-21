@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="category"
+            type="com.example.moneywellspent.data.model.CategoryData" />
+
+        <variable
+            name="clickListener"
+            type="com.example.moneywellspent.choosecategory.OnItemClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:elevation="8dp"
+            android:onClick="@{()->clickListener.onClick(category)}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/expense_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:icon="@{category.image}"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    tools:src="@drawable/ic_health" />
+
+                <TextView
+                    android:id="@+id/expense_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:text="@{category.name}"
+                    android:textColor="@color/black"
+                    android:textSize="26sp"
+                    tools:text="Health" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</layout>

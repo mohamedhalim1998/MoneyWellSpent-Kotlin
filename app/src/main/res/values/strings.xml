@@ -6,4 +6,15 @@
     <string name="this_week">This week</string>
     <string name="last_week">Last Week</string>
     <string name="last_month">Last Month</string>
+    <string name="amount">Amount</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="note">note</string>
+    <string name="category_transfer">Transfer</string>
+    <string name="category_transportation">Transportation</string>
+    <string name="category_food">Food</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_bills">Bills</string>
+    <string name="category_education">Education</string>
+    <string name="category_health">Health</string>
+    <string name="category_other">Other</string>
 </resources>

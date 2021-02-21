@@ -9,5 +9,22 @@
         android:id="@+id/expensesFragment"
         android:name="com.example.moneywellspent.expenses.ExpensesFragment"
         android:label="expenses_fragment"
-        tools:layout="@layout/expenses_fragment" />
+        tools:layout="@layout/expenses_fragment" >
+        <action
+            android:id="@+id/action_expensesFragment_to_addEpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExpenseFragment"
+        android:name="com.example.moneywellspent.addexpense.AddExpenseFragment"
+        android:label="add_epense_fragment"
+        tools:layout="@layout/add_expense_fragment" >
+        <action
+            android:id="@+id/action_addExpenseFragment_to_chooseCategoryFragment"
+            app:destination="@id/chooseCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCategoryFragment"
+        android:name="com.example.moneywellspent.choosecategory.ChooseCategoryFragment"
+        android:label="ChooseCategoryFragment" />
 </navigation>
