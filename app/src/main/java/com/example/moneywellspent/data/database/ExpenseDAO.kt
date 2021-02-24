@@ -13,6 +13,9 @@ interface ExpenseDAO {
     @Insert
     suspend fun addWallet(wallet: Wallet)
 
+    @Query("SELECT * FROM wallet")
+    fun getWallets(): Flow<List<Wallet>>
+
     @Insert
     suspend fun addExpense(expense: Expense)
 

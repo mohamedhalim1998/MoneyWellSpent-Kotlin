@@ -27,3 +27,8 @@ fun TextView.formatTime(time: Long) {
 fun ImageView.icon(res: Int) {
     setImageResource(res)
 }
+
+@BindingAdapter("android:textNum")
+fun TextView.textNum(i: Double) {
+    text = String.format("%.2f", i)
+}

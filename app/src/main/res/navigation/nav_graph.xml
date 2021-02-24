@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_expensesFragment_to_addEpenseFragment"
             app:destination="@id/addExpenseFragment" />
+        <action
+            android:id="@+id/action_expensesFragment_to_walletFragment"
+            app:destination="@id/walletFragment" />
     </fragment>
     <fragment
         android:id="@+id/addExpenseFragment"
@@ -27,4 +30,8 @@
         android:id="@+id/chooseCategoryFragment"
         android:name="com.example.moneywellspent.choosecategory.ChooseCategoryFragment"
         android:label="ChooseCategoryFragment" />
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.moneywellspent.wallet.WalletFragment"
+        android:label="WalletFragment" />
 </navigation>

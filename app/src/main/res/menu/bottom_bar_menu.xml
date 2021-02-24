@@ -17,7 +17,7 @@
         />
 
     <item
-        android:id="@+id/walletsFragment"
+        android:id="@+id/walletFragment"
         android:icon="@drawable/ic_home_light"
         android:title="@string/wallets"
         app:showAsAction="ifRoom"
